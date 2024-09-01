@@ -1,0 +1,915 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Enable smooth scrolling for the entire document */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #222;
+    background-size: cover;
+    color: #f5f5f5;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    /* Prevent horizontal overflow */
+}
+
+
+/* Navigation Styling */
+nav {
+    background-color: #222;
+    padding: 15px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+/* Profile Text Styling */
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.profile-text {
+    color: #f5f5f5;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+/* Navigation Links Container */
+.nav-right {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation List Item Styling */
+.nav-right li {
+    margin: 0 20px;
+    position: relative;
+}
+
+/* Navigation Links Styling */
+.nav-right li a {
+    color: #f5f5f5;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    position: relative;
+    padding: 5px 0;
+    display: inline-block;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Navigation Link Hover Effect */
+.nav-right li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: linear-gradient(45deg, #ff0066, #ffcc00, #1db954);
+    transition: width 0.3s ease;
+}
+
+/* Hover Animation */
+.nav-right li a:hover {
+    color: #1db954;
+    transform: translateY(-3px);
+}
+
+/* Hover Underline Animation */
+.nav-right li a:hover::after {
+    width: 100%;
+}
+
+/* Navbar Background Transition on Scroll */
+nav.scrolled {
+    background-color: #111;
+}
+
+/* Landing Section Styling */
+.landing {
+    height: 100vh;
+    background: url('./images/bg.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.landing::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Dark overlay */
+}
+
+.landing-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Profile Container 2 Styles */
+.profile-container2 {
+    text-align: center;
+    color: #f5f5f5;
+}
+
+/* Paragraph Styling */
+.profile-description {
+    font-size: 1.2rem; /* Adjust the font size for readability */
+    line-height: 1.8; /* Increase line height for better readability */
+    max-width: 90%; /* Limit the width to keep text readable */
+    margin: 0 auto; /* Center the paragraph */
+    padding: 10px 20px; /* Add padding for spacing */
+    background: rgba(255, 255, 255, 0.2); /* Light background to make text stand out */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+    padding: 20px; /* Add padding for spacing */
+    
+}
+
+
+/* Optional Text Gradient Effect */
+.profile-description {
+    background: linear-gradient(45deg, #ff0066, #ffcc00, #1db954);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.profile-container2 {
+    margin-top: 20px;
+}
+
+/* Typing Effect Keyframes */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+
+    from,
+    to {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: #fff;
+        /* Adjust color if needed */
+    }
+}
+
+
+/* Typing Effect for h1 */
+.profile-container2 h1 {
+    font-size: 4rem;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    background: linear-gradient(90deg, #ff0066, #ffcc00, #1db954);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: typing 5s steps(20, end), blink 0.75s step-end infinite;
+    ;
+    margin-top: 10px;
+}
+
+
+/* Profile Container Styling */
+.profile-container {
+    display: flex;
+    align-items: center;
+    /* Center items vertically */
+    position: relative;
+    margin-top: 40px;
+}
+
+
+
+/* Profile Picture Styling */
+.profile-picture {
+    margin-top: 5%;
+    position: relative;
+    width: 200px;
+    /* Larger size */
+    height: 200px;
+    /* Larger size */
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.8);
+    /* Neon effect removed */
+    transition: transform 0.3s ease;
+    margin-left: 30%;
+}
+
+/* Image Styling */
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Hover Effect */
+.profile-picture:hover {
+    transform: scale(1.05);
+    /* Light zoom effect */
+}
+
+
+/* Social Media Icons */
+.social-media-icons {
+    display: none;
+    /* Hidden by default */
+    position: absolute;
+    top: 80%;
+    left: 47%;
+    /* Position just to the right of the profile picture */
+    transform: translateY(-50%);
+    /* Center vertically */
+    display: flex;
+    flex-direction: row;
+    /* Align icons horizontally */
+    gap: 30px;
+    /* Space between icons */
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Visible State */
+.social-media-icons.visible {
+    display: flex;
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+    /* Ensure visibility */
+}
+
+.social-media-icons a {
+    position: relative;
+    /* For tooltip positioning */
+    color: #fff;
+    font-size: 2.5rem;
+    /* Adjust size for better visibility */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Hover Effects for Icons */
+.social-media-icons a:hover {
+    color: #1db954;
+    transform: scale(1.3) rotate(10deg);
+    /* Increased scale and slight rotation */
+}
+
+/* Tooltip Styling */
+.social-media-icons a::after {
+    content: attr(data-name);
+    /* Use the `data-name` attribute for the tooltip text */
+    position: absolute;
+    bottom: 100%;
+    /* Position above the icon */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    /* Prevent text from wrapping */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    font-size: 0.9rem;
+    text-align: center;
+    z-index: 10;
+}
+
+/* Show Tooltip on Hover */
+.social-media-icons a:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-10px);
+    /* Position tooltip slightly above the icon */
+}
+
+/* Hover Effect for Profile Picture */
+.profile-picture:hover {
+    transform: scale(1.05);
+    /* Slight zoom effect */
+}
+
+
+
+/* Text Content */
+.landing-content h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.landing-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* Button Styling */
+.btn-primary {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #1db954;
+    color: #fff;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    border: 2px solid transparent;
+    /* Default border */
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    z-index: 1; /* Ensure button is on top */
+    margin-bottom: 1%;
+}
+
+/* Hover Effect and Gradient Border */
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #ff0066, #ffcc00, #1db954);
+    z-index: -1;
+    /* Ensure the gradient is behind the text */
+    transition: transform 0.3s ease;
+    transform: scale(0);
+    border-radius: 50px;
+}
+
+.btn-primary:hover::before {
+    transform: scale(1);
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    /* Remove default background on hover */
+    color: #fff;
+    /* Keep text color */
+    border-color: transparent;
+    /* Remove border color on hover */
+}
+
+/* Ensure Text Visibility */
+.btn-primary span {
+    position: relative;
+    z-index: 1;
+    /* Ensure text stays above gradient */
+}
+
+
+
+
+/* About Section Styling */
+.about-section {
+    padding: 80px 20px;
+    background: url('./images/bg.jpg') no-repeat center center/cover;
+    color: #f5f5f5;
+    /* Light text color */
+    text-align: center;
+    position: relative;
+    margin: 40px 0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    margin-top: 30px;
+
+}
+
+
+/* Hover Effect */
+.about-section:hover {
+    transform: scale(1.02);
+    /* Scale up slightly */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.about-section:hover {
+    overflow: hidden;
+}
+
+/* Description Styling */
+.about-description {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Title Styling */
+.about-title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #1db954;
+    /* Bright color for the title */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: titleGlow 2s ease-in-out infinite alternate;
+}
+
+/* Highlighted Text Styling */
+.highlight {
+    background: linear-gradient(45deg, #ff0066, #ffcc00, #1db954);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* Title Glow Animation */
+@keyframes titleGlow {
+    from {
+        text-shadow: 0 0 10px #1db954, 0 0 20px #1db954, 0 0 30px #1db954, 0 0 40px #1db954;
+    }
+
+    to {
+        text-shadow: 0 0 20px #1db954, 0 0 30px #1db954, 0 0 40px #1db954, 0 0 50px #1db954;
+    }
+}
+
+/* Education Section Styling */
+.education-section {
+    padding: 60px 20px;
+    margin: 20px 0;
+    position: relative;
+    /* Necessary for pseudo-elements */
+    background-size: cover;
+    background-attachment: fixed;
+    /* Parallax scrolling effect */
+    background-position: center;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+    /* For hover effects that go outside bounds */
+    background-image: url('./images/bg.jpg');
+    /* Add the correct path to your image */
+}
+
+#education .education-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#education .education-item {
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent background for better readability */
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px 0;
+    width: 80%;
+    max-width: 600px;
+    text-align: left;
+    /* Align text to the left for education items */
+}
+
+/* Optional: Hover effect for education items */
+#education .education-item:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+/* Common pseudo-element styles for all sections */
+.education-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: -1;
+    transition: all 0.5s ease;
+}
+
+.section:hover::before {
+    background: rgba(0, 0, 0, 0.7); /* Change overlay on hover */
+}
+
+
+/* Title Styling */
+.education-title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #1db954;
+    /* Bright color for the title */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: titleGlow 2s ease-in-out infinite alternate;
+}
+
+
+/* Skills Section Styling */
+.skills-section {
+    padding: 80px 20px;
+    background: url('./images/bg.jpg') no-repeat center center/cover;
+    color: #f5f5f5;
+    text-align: center;
+    position: relative;
+    margin: 40px 0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+
+}
+
+/* Hover Effect */
+.skills-section:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Title Styling */
+.skills-title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #1db954;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: titleGlow 2s ease-in-out infinite alternate;
+}
+
+/* Description Styling */
+.skills-description {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+
+/* Skills Icons Container */
+.skills-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 70px;
+    /* Space between icons */
+}
+
+/* Individual Skill Icon */
+.skill-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #f5f5f5;
+    font-size: 8rem;
+    /* Larger icon size */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Hover Effect for Icons */
+.skill-icon:hover {
+    color: #1db954;
+    /* Change color on hover */
+    transform: scale(1.1);
+    /* Slight zoom effect */
+}
+
+.skill-icon p {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    /* Adjust text size */
+    font-weight: 600;
+}
+
+/* Title Glow Animation */
+@keyframes titleGlow {
+    from {
+        text-shadow: 0 0 10px #1db954, 0 0 20px #1db954, 0 0 30px #1db954, 0 0 40px #1db954;
+    }
+
+    to {
+        text-shadow: 0 0 20px #1db954, 0 0 30px #1db954, 0 0 40px #1db954, 0 0 50px #1db954;
+    }
+}
+
+
+
+/* Projects Section Styling */
+.projects-section {
+    padding: 80px 20px;
+    background: url('./images/bg.jpg') no-repeat center center/cover;
+    color: #f5f5f5;
+    text-align: center;
+    position: relative;
+    margin: 40px 0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    margin-top: 0px;
+}
+
+/* Hover Effect */
+.projects-section:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Title Styling */
+.projects-title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #1db954;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: titleGlow 2s ease-in-out infinite alternate;
+}
+
+/* Description Styling */
+.projects-description {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+
+/* Projects Grid Styling */
+.projects-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    /* Space between project items */
+}
+
+/* Individual Project Styling */
+.project {
+    background: linear-gradient(145deg, #333, #222);
+    /* Subtle gradient background */
+    border-radius: 15px;
+    /* Rounded corners */
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    width: calc(33% - 30px);
+    /* Responsive width */
+    position: relative;
+}
+
+/* Project Hover Effect */
+.project:hover {
+    transform: scale(1.05);
+    /* Slight zoom effect */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    /* Enhanced shadow */
+    background: linear-gradient(145deg, #444, #333);
+    /* Darker gradient on hover */
+}
+
+/* Project Image Styling */
+.project img {
+    width: 100%;
+    height: auto;
+    display: block;
+    /* Remove any bottom space */
+    border-bottom: 4px solid #1db954;
+    /* Green border below image */
+    transition: border-color 0.3s ease;
+}
+
+.project:hover img {
+    border-color: #ff0066;
+    /* Change border color on hover */
+}
+
+/* Project Info Styling */
+.project-info {
+    padding: 20px;
+    color: #f5f5f5;
+    background-color: #333;
+    /* Slightly darker background */
+    position: relative;
+    z-index: 1;
+    /* Ensure text stays above overlay */
+    padding: 20px;
+}
+
+.project-info a {
+    text-decoration: none;
+    /* Ensure no underline */
+    color: inherit;
+    /* Use inherited color */
+}
+
+
+/* Title Styling */
+.project-info h3 {
+    margin-bottom: 15px;
+    font-size: 1.6rem;
+    color: #1db954;
+    /* Bright color for title */
+    font-weight: 700;
+    /* Bold title */
+}
+
+/* Description Styling */
+.project-info p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+
+/* Overlay Effect */
+.project-info::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    /* Dark overlay for better readability */
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    z-index: 0;
+}
+
+/* Project Hover Overlay */
+.project:hover .project-info::before {
+    opacity: 1;
+}
+
+/* Title Glow Animation */
+@keyframes titleGlow {
+    from {
+        text-shadow: 0 0 10px #1db954, 0 0 20px #1db954, 0 0 30px #1db954, 0 0 40px #1db954;
+    }
+
+    to {
+        text-shadow: 0 0 20px #1db954, 0 0 30px #1db954, 0 0 40px #1db954, 0 0 50px #1db954;
+    }
+}
+
+/* Section Container Styling */
+
+
+/* Contact Form Styling */
+
+.contact-form-section {
+    padding: 80px 20px;
+    background: url('./images/bg.jpg') no-repeat center center/cover;
+    /* Match the background */
+    color: #f5f5f5;
+    /* Light text color */
+    text-align: center;
+    /* Center text */
+    position: relative;
+    margin: 40px 0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+/* Hover Effect */
+.contact-form-section:hover {
+    transform: scale(1.02);
+    /* Slight zoom effect */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    /* Enhanced shadow */
+}
+
+/* Title Styling */
+.contact-form-section h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #1db954;
+    /* Match with theme */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: titleGlow 2s ease-in-out infinite alternate;
+    /* Glow effect */
+}
+
+form {
+    background-color: #333;
+    /* Dark background for form */
+    padding: 30px;
+    border-radius: 10px;
+    /* Rounded corners */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    /* Shadow for depth */
+    max-width: 600px;
+    /* Limit form width */
+    margin: 20px auto;
+    /* Center form horizontally */
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #444;
+    /* Slightly lighter dark background */
+    color: #f5f5f5;
+    /* Light text color */
+    font-size: 1rem;
+}
+
+form input::placeholder,
+form textarea::placeholder {
+    color: #888;
+    /* Light placeholder text */
+}
+
+form button {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    background-color: #1db954;
+    /* Button color */
+    color: #f5f5f5;
+    /* Text color */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* Button Hover Effect */
+form button:hover {
+    background-color: #148f40;
+    /* Darker green on hover */
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #222;
+    /* Dark background matching the theme */
+    color: #f5f5f5;
+    /* Light text color */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a {
+    color: #1db954;
+    /* Match link color with the theme */
+    text-decoration: none;
+    /* Remove underline */
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #ff0066;
+    /* Change color on hover */
+}
+
+.social-media{
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    margin-top: 1%;
+}
+
+.social-media a{
+    font-size: 2rem;
+}
