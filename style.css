@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+hr{
+    border:groove #1db954 1px ;
+}
+
 /* Enable smooth scrolling for the entire document */
 html {
     scroll-behavior: smooth;
@@ -110,9 +114,23 @@ nav.scrolled {
     background-color: #111;
 }
 
+@media screen and (max-width:767px){
+    .nav-right{
+        display: none;
+    }
+    nav{
+        justify-content: center;
+    }
+    #profile-text-size{
+        font-size: 2rem;
+        color: #1db954
+    }
+    
+}
+
 /* Landing Section Styling */
 .landing {
-    height: 100vh;
+    height: 100%;
     background: url('./images/bg.jpg') no-repeat center center/cover;
     display: flex;
     align-items: center;
@@ -138,10 +156,19 @@ nav.scrolled {
     z-index: 2;
 }
 
-/* Profile Container 2 Styles */
-.profile-container2 {
-    text-align: center;
-    color: #f5f5f5;
+/* Typing Effect for h1 */
+.profile-container2 h1 {
+    font-size: 4rem;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    background: linear-gradient(90deg, #ff0066, #ffcc00, #1db954);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: typing 5s steps(20, end), blink 0.75s step-end infinite;
+    margin-top: 10px;
 }
 
 /* Paragraph Styling */
@@ -152,11 +179,11 @@ nav.scrolled {
     margin: 0 auto; /* Center the paragraph */
     padding: 10px 20px; /* Add padding for spacing */
     background: rgba(255, 255, 255, 0.2); /* Light background to make text stand out */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
     transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
     padding: 20px; /* Add padding for spacing */
     
 }
+
 
 
 /* Optional Text Gradient Effect */
@@ -166,10 +193,14 @@ nav.scrolled {
     -webkit-text-fill-color: transparent;
 }
 
-
+/* Profile Container 2 Styles */
 .profile-container2 {
+    text-align: center;
+    color: #f5f5f5;
     margin-top: 20px;
+    width: 100%;
 }
+
 
 /* Typing Effect Keyframes */
 @keyframes typing {
@@ -195,31 +226,28 @@ nav.scrolled {
     }
 }
 
-
-/* Typing Effect for h1 */
-.profile-container2 h1 {
-    font-size: 4rem;
-    font-weight: 600;
-    white-space: nowrap;
-    overflow: hidden;
-    display: inline-block;
-    background: linear-gradient(90deg, #ff0066, #ffcc00, #1db954);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    animation: typing 5s steps(20, end), blink 0.75s step-end infinite;
-    ;
-    margin-top: 10px;
-}
-
-
 /* Profile Container Styling */
 .profile-container {
     display: flex;
     align-items: center;
     /* Center items vertically */
     position: relative;
-    margin-top: 40px;
+    margin-top: 5%;
+    width: 100%;
+}
+
+@media screen and (max-width:767px){
+
+    .profile-container{
+        margin-top: 25%;
+    }
+
+    .profile-container2 h1{
+
+        font-size:small;
+        font-weight: 200;
+    }
+
 }
 
 
@@ -251,7 +279,7 @@ nav.scrolled {
 /* Hover Effect */
 .profile-picture:hover {
     transform: scale(1.05);
-    /* Light zoom effect */
+    cursor: pointer;
 }
 
 
@@ -268,11 +296,24 @@ nav.scrolled {
     display: flex;
     flex-direction: row;
     /* Align icons horizontally */
-    gap: 30px;
+    gap: 40px;
     /* Space between icons */
     opacity: 0;
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
+
+@media screen and (max-width:767px){
+
+    .social-media-icons{
+        flex-direction: column;
+        gap: 2px;
+        left: 40px;
+        top: 60%;
+    }
+
+}
+    
+
 
 /* Visible State */
 .social-media-icons.visible {
@@ -289,6 +330,14 @@ nav.scrolled {
     font-size: 2.5rem;
     /* Adjust size for better visibility */
     transition: transform 0.3s ease, color 0.3s ease;
+}
+
+@media screen and (max-width:767px){
+
+    .social-media-icons a{
+        font-size: 1.8rem;
+    }
+
 }
 
 /* Hover Effects for Icons */
@@ -319,6 +368,13 @@ nav.scrolled {
     font-size: 0.9rem;
     text-align: center;
     z-index: 10;
+}
+
+@media screen and (max-width:767px) {
+
+    .social-media-icons a::after{
+        font-size: 0.5rem;
+    }
 }
 
 /* Show Tooltip on Hover */
@@ -414,20 +470,17 @@ nav.scrolled {
     /* Light text color */
     text-align: center;
     position: relative;
-    margin: 40px 0;
+    margin: 0px 0;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease;
-    margin-top: 30px;
+    margin-top: 0px;
 
 }
 
 
 /* Hover Effect */
-.about-section:hover {
-    transform: scale(1.02);
-    /* Scale up slightly */
+/*.about-section:hover {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-}
+} */
 
 .about-section:hover {
     overflow: hidden;
@@ -449,7 +502,7 @@ nav.scrolled {
     /* Bright color for the title */
     text-transform: uppercase;
     letter-spacing: 2px;
-    animation: titleGlow 2s ease-in-out infinite alternate;
+    /* animation: titleGlow 2s ease-in-out infinite alternate; */
 }
 
 /* Highlighted Text Styling */
@@ -474,7 +527,6 @@ nav.scrolled {
 /* Education Section Styling */
 .education-section {
     padding: 60px 20px;
-    margin: 20px 0;
     position: relative;
     /* Necessary for pseudo-elements */
     background-size: cover;
@@ -509,10 +561,10 @@ nav.scrolled {
 }
 
 /* Optional: Hover effect for education items */
-#education .education-item:hover {
+.education-item:hover {
     transform: scale(1.05);
     transition: transform 0.3s ease;
-}
+} 
 
 /* Common pseudo-element styles for all sections */
 .education-section::before {
@@ -540,8 +592,68 @@ nav.scrolled {
     /* Bright color for the title */
     text-transform: uppercase;
     letter-spacing: 2px;
-    animation: titleGlow 2s ease-in-out infinite alternate;
+    /* animation: titleGlow 2s ease-in-out infinite alternate; */
 }
+
+.resume{
+    margin-top: 20px;
+}
+
+#cv-btn {
+
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #1db954;
+    color: #fff;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    border: 2px solid transparent;
+    /* Default border */
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    z-index: 1; /* Ensure button is on top */
+    margin-bottom: 1%;
+}
+
+ #cv-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #ff0066, #ffcc00, #1db954);
+    z-index: -1;
+    /* Ensure the gradient is behind the text */
+    transition: transform 0.3s ease;
+    transform: scale(0);
+    border-radius: 50px;
+}
+
+#cv-btn:hover::before {
+    transform: scale(1);
+}
+
+#cv-btn:hover {
+    background-color: transparent;
+    /* Remove default background on hover */
+    color: #fff;
+    /* Keep text color */
+    border-color: transparent;
+    /* Remove border color on hover */
+    cursor: pointer;
+}
+
+/* Ensure Text Visibility */
+#cv-btn span {
+    position: relative;
+    z-index: 1;
+    /* Ensure text stays above gradient */
+}
+
 
 
 /* Skills Section Styling */
@@ -551,17 +663,18 @@ nav.scrolled {
     color: #f5f5f5;
     text-align: center;
     position: relative;
-    margin: 40px 0;
+    margin: 0px 0;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease;
+    /* transition: transform 0.3s ease; */
 
 }
 
-/* Hover Effect */
+Hover Effect */
 .skills-section:hover {
-    transform: scale(1.02);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+     transform: scale(1.02); 
+     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); 
 }
+
 
 /* Title Styling */
 .skills-title {
@@ -570,7 +683,7 @@ nav.scrolled {
     color: #1db954;
     text-transform: uppercase;
     letter-spacing: 2px;
-    animation: titleGlow 2s ease-in-out infinite alternate;
+    /* animation: titleGlow 2s ease-in-out infinite alternate; */
 }
 
 /* Description Styling */
@@ -618,7 +731,7 @@ nav.scrolled {
 }
 
 /* Title Glow Animation */
-@keyframes titleGlow {
+/* @keyframes titleGlow {
     from {
         text-shadow: 0 0 10px #1db954, 0 0 20px #1db954, 0 0 30px #1db954, 0 0 40px #1db954;
     }
@@ -626,7 +739,7 @@ nav.scrolled {
     to {
         text-shadow: 0 0 20px #1db954, 0 0 30px #1db954, 0 0 40px #1db954, 0 0 50px #1db954;
     }
-}
+} */
 
 
 
@@ -639,15 +752,9 @@ nav.scrolled {
     position: relative;
     margin: 40px 0;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease;
     margin-top: 0px;
 }
 
-/* Hover Effect */
-.projects-section:hover {
-    transform: scale(1.02);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-}
 
 /* Title Styling */
 .projects-title {
@@ -656,7 +763,6 @@ nav.scrolled {
     color: #1db954;
     text-transform: uppercase;
     letter-spacing: 2px;
-    animation: titleGlow 2s ease-in-out infinite alternate;
 }
 
 /* Description Styling */
@@ -685,9 +791,17 @@ nav.scrolled {
     /* Rounded corners */
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-    width: calc(33% - 30px);
+    flex-basis: 25%;
     /* Responsive width */
     position: relative;
+    height: fit-content
+}
+
+@media screen and (max-width:767px){
+    .project{
+        flex-basis: 50%;
+        flex-grow: 1;
+    }
 }
 
 /* Project Hover Effect */
@@ -774,7 +888,7 @@ nav.scrolled {
 }
 
 /* Title Glow Animation */
-@keyframes titleGlow {
+/* @keyframes titleGlow {
     from {
         text-shadow: 0 0 10px #1db954, 0 0 20px #1db954, 0 0 30px #1db954, 0 0 40px #1db954;
     }
@@ -782,7 +896,7 @@ nav.scrolled {
     to {
         text-shadow: 0 0 20px #1db954, 0 0 30px #1db954, 0 0 40px #1db954, 0 0 50px #1db954;
     }
-}
+} */
 
 /* Section Container Styling */
 
@@ -804,12 +918,11 @@ nav.scrolled {
 }
 
 /* Hover Effect */
-.contact-form-section:hover {
-    transform: scale(1.02);
-    /* Slight zoom effect */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+ .contact-form-section:hover { 
+    transform: scale(1.02); 
+     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); 
     /* Enhanced shadow */
-}
+} 
 
 /* Title Styling */
 .contact-form-section h2 {
@@ -819,7 +932,7 @@ nav.scrolled {
     /* Match with theme */
     text-transform: uppercase;
     letter-spacing: 2px;
-    animation: titleGlow 2s ease-in-out infinite alternate;
+    /* animation: titleGlow 2s ease-in-out infinite alternate; */
     /* Glow effect */
 }
 
